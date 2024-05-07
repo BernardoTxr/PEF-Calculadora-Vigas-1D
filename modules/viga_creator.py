@@ -21,10 +21,13 @@ from modules.viga_printer import Printer
 
 class Viga:
     # Construtor da classe
-    def __init__(self, tamanho, forcas, momentos):
+    def __init__(self, tamanho, localizacao_f_verticais, intensidades_f_verticais, momentos, suportes):
         self.tamanho = tamanho
-        self.forcas = forcas
+        self.localizacao_f_verticais = localizacao_f_verticais
+        self.intensidades_f_verticais = intensidades_f_verticais
         self.momentos = momentos
+        self.suportes = suportes
+        Printer.printar_desenho_inicial(self)
 
     # Método para calcular as reações de apoio
     def calcular_reacoes(self):
